@@ -3,17 +3,20 @@ package com.mbacinska;
 public class Char {
 
     public static void main(String[] args) {
-        char ch ='a';
+        char ch = 'a';
         System.out.println(ch);
-        System.out.println(ch+1);
-        System.out.println(ch<20);
+        System.out.println("\u2202");
+        System.out.println("\u0061");
+        System.out.println(ch + 1);
+        System.out.println(ch > 20);
 
-        ch = 'a' +'b';
+        ch = 'a' + 'b' + 'c';
         System.out.println(ch);
 
         System.out.println("a" + 'b');
-        System.out.println("Result"+10+20);
-        System.out.println(+10+30+"Result");
-        System.out.println("Result"+10*20);
+        System.out.println("Result" + 10 + 20);
+        System.out.println(+10 + 30 + "Result");
+        System.out.println("Result" + 10 * 20);
     }
 }
+

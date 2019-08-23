@@ -2,29 +2,46 @@ package com.mbacinska;
 
 public class Operators {
 
-    public static void main(String[] args) {
-        int val = 10;
-        val++;
-        System.out.println(val);
 
-//        int val2 =10;
-//        int result = val2++;
+//    public static void main1(String[] args) {
+//
+////        int val = 10;
+////        int result = val ++;
+//
+//        int val = 10;
+////        val++;
+//        ++val;
+////        val += 1;
+//        int result = val;
+//
+//
 //        System.out.println(val);
 //        System.out.println(result);
+//
+//        System.out.println(val++ + +1);
+//    }
 
-        int val2 = 10;
-        val2++; //val2+=1
-        System.out.println(val2);
-        System.out.println((val--) - (-1));
 
-        int val3 = 10;
+    public static void main(String[] args) {
+
+        int value = 13;
+
         int secondOne = 0;
-        if (val3 > 11) {
-            secondOne = val3 * 2;
-        } else {
-            secondOne = val3 - 1;
-        }
+//
+//        if (value > 11) {
+//            secondOne = value * 2;
+//        } else {
+//            secondOne = value - 1;
+//        }
 
-        int anotherOne = val3 > 11 ? val3 * 2 : val3 - 1; //ternary operator
+        secondOne=value>11?value*2:value-1;
+
+        System.out.println("secondOne = " +secondOne);
+
+        int anotherValue = value > 11
+                ? value * 2
+                : value - 1;
+
+
     }
 }

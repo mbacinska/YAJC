@@ -10,8 +10,8 @@ public class ifStatement {
         System.out.println(result1);
         double result2 = sqrtWrapper2(64.0);
         System.out.println(result2);
-        result2 = sqrtWrapper2(-64.0);
-        System.out.println(result2);
+        double result3 = sqrtWrapper2(-64);
+        System.out.println(result3);
 
     }
 
@@ -24,18 +24,18 @@ public class ifStatement {
         return Math.sqrt(arg);
     }
 
+    //TO BYŁO TRUDNE
+
     static double sqrtWrapper2(double arg) {
 
-        Double d = new Double(arg);
+        double result = Math.sqrt(arg);
 
-        if (d.isNaN()) {
+        if (Double.isNaN(result)) {
             return 0.0;
-
+        } else {
+            return result;
         }
-        return Math.sqrt(arg);
-
     }
-
 
 
 }

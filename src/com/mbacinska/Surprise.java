@@ -22,7 +22,7 @@ public class Surprise {
         boolean rhs = true;
         boolean result = isResult(lhs, rhs);
         System.out.println(result);
-        
+
         System.out.println(1500_100_900);
         System.out.println(123_45_55_9876L);
     }

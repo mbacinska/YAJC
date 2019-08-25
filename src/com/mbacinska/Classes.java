@@ -11,11 +11,12 @@ public class Classes {
         System.out.println(person0.name);
         System.out.println(person0.HELLO_MESSAGE);
 
-        // person0.duplicate(person1);
-        //person1.duplicate(person0);
+//        person0.duplicate(person1);
+//        person1.duplicate(person0);
 
-        // person0.modify((person1));
-        //System.out.println(person1.birthdate);
+        person0.modify((person1));
+        System.out.println(person1.birthdate);
+        System.out.println(person0.birthdate);
 
 
       //  person0.HELLO_MESSAGE = "asdasd"; cannot asign a value to the final variable
@@ -46,6 +47,7 @@ public class Classes {
         }
 
         public void modify(Person another) {
+
             another.birthdate += 100;
         }
 

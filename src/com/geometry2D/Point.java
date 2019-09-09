@@ -24,11 +24,6 @@ public class Point extends Shape implements HasArea {
 
 
     @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
     public double getArea() {
         return 0.0;
     }
@@ -51,5 +46,23 @@ public class Point extends Shape implements HasArea {
     @Override
     public int hashCode() {
         return Objects.hash(coordinate);
+    }
+
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(1.0,2.5);
+
+        Point point = new Point(coordinate);
+
+        System.out.println(point.getName());
+
+        System.out.println("point.x : " +point.getCoordinateX());
+
+        System.out.println("point.y : "+point.getCoordinateY());
+
+        System.out.println("point.area: "+point.getArea());
+
+        System.out.println(point.toString());
     }
 }

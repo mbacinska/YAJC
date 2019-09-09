@@ -26,10 +26,6 @@ public class SimpleVector extends Shape {
         this.direction = direction;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
 
 
     @Override
@@ -45,5 +41,16 @@ public class SimpleVector extends Shape {
     @Override
     public int hashCode() {
         return Objects.hash(coordinate, value, direction);
+    }
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(5,5);
+
+        SimpleVector simpleVector = new SimpleVector(coordinate,2,1);
+
+        System.out.println(simpleVector.getName());
+
+        System.out.println(simpleVector.toString());
     }
 }

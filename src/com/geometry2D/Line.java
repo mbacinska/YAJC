@@ -15,10 +15,6 @@ public class Line extends Shape{
         this.coordinate2 = coordinate2;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
 
     @Override
     public String toString() {
@@ -40,5 +36,20 @@ public class Line extends Shape{
     @Override
     public int hashCode() {
         return Objects.hash(coordinate1, coordinate2);
+    }
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate1 = new Coordinates(1,2);
+
+        Coordinates coordinate2 = new Coordinates(3,4);
+
+        Line line = new Line(coordinate1,coordinate2);
+
+        System.out.println(line.getName());
+
+        System.out.println(line.toString());
+
+
     }
 }

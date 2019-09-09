@@ -7,14 +7,10 @@ public class CircleWithColour extends Circle implements Colorable {
     private String colour;
 
     public CircleWithColour(Coordinates coordinate, double radius, String colour) {
-        super("Circle", coordinate, radius);
+        super(coordinate, radius);
         this.colour = colour;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
 
     @Override
     public String getColour() {
@@ -41,5 +37,22 @@ public class CircleWithColour extends Circle implements Colorable {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), colour);
+    }
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(1.0,3.0);
+
+        CircleWithColour circleWithColour = new CircleWithColour(coordinate,5,"yellow");
+
+        System.out.println(circleWithColour.getName());
+
+        System.out.println(circleWithColour.getColour());
+
+        System.out.println(circleWithColour.getArea());
+
+        System.out.println(circleWithColour.getLength());
+
+        System.out.println(circleWithColour.toString());
     }
 }

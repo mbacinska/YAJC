@@ -8,15 +8,18 @@ public class Circle extends Shape implements HasLength, HasArea {
     private final double radius;
 
 
-    public Circle(String name, Coordinates coordinate, double radius) {
+    public Circle(Coordinates coordinate, double radius) {
         super("Circle");
         this.coordinate = coordinate;
         this.radius = radius;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
+    public double getRadius() {
+        return radius;
+    }
+
+    public Coordinates getCoordinate() {
+        return coordinate;
     }
 
     @Override
@@ -50,4 +53,22 @@ public class Circle extends Shape implements HasLength, HasArea {
     public int hashCode() {
         return Objects.hash(coordinate, radius);
     }
+
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(1.0,2.0);
+
+        Circle circle = new Circle(coordinate, 3);
+
+        System.out.println(circle.getName());
+
+        System.out.println("circle.area: " +circle.getArea());
+
+        System.out.println("circle.length: " +circle.getLength());
+
+        System.out.println(circle.toString());
+    }
 }
+
+

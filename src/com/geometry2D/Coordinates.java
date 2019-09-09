@@ -52,5 +52,27 @@ public class Coordinates {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+
+    }
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(5, 7);
+
+        System.out.println(coordinate.getX());
+
+        System.out.println(coordinate.getY());
+
+        coordinate = coordinate.translate(3, 3);
+
+        System.out.println(coordinate.getX());
+
+        System.out.println(coordinate.getY());
+
+        System.out.println(coordinate.toString());
+
+
+
+
     }
 }

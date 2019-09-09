@@ -15,10 +15,6 @@ public class Torus extends Shape implements HasArea, HasLength {
         this.radius2 = radius2;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
 
     //Math.abs
     @Override
@@ -69,5 +65,27 @@ public class Torus extends Shape implements HasArea, HasLength {
     @Override
     public int hashCode() {
         return Objects.hash(coordinate, radius1, radius2);
+    }
+
+    public static void main(String[] args) {
+
+        Coordinates coordinate = new Coordinates(1,1);
+
+        Torus torus = new Torus(coordinate,2,3);
+
+        System.out.println(torus.getName());
+
+        System.out.println(torus.toString());
+
+        System.out.println(torus.radius1);
+
+        System.out.println(torus.radius2);
+
+        System.out.println(torus.getArea());
+
+        System.out.println(torus.getLength());
+
+
+
     }
 }

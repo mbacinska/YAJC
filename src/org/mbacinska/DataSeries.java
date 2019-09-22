@@ -16,13 +16,17 @@ public class DataSeries {
         System.out.println("Entire words:   " + words);
 
 
-        //findUniqueRandoms(numbers);
-        //iterateThroughWords(words);
-        //backIterateThroughWords(words);
-        //backIterateThroughWords2(words);
-       // iterateThroughNumbersWords(numbers, words);
+        findUniqueRandoms(numbers);
+        iterateThroughWords(words);
+        backIterateThroughWords(words);
+        backIterateThroughWords2(words);
+        iterateThroughNumbersWords(numbers, words);
         iterateThroughTwoNumbers(numbers);
-//        associateWordsAndNumbers(numbers, words);
+        Map<String, Integer> newMap = associateWordsAndNumbers(numbers, words);
+        System.out.println(newMap);
+        System.out.println(newMap.get("elit"));
+        System.out.println(newMap.get("sapien"));
+
 
     }
 
@@ -44,10 +48,11 @@ public class DataSeries {
         Set<Integer> result = new HashSet<>();
 
         for (Integer number : numbers) {
-
-
             result.add(number);
         }
+
+        //lub
+        //Set<Integer> result = new HashSet<>(numbers);
 
         System.out.println("Result : " + result);
 
@@ -59,10 +64,9 @@ public class DataSeries {
 
         Iterator<String> iterator = words.iterator();
         // String element = iterator.next();
-        for (String element : words) {
-            if (iterator.hasNext()) {
-                System.out.print(element + " ");
-            }
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.print(element + " ");
         }
         System.out.println();
     }
@@ -92,7 +96,7 @@ public class DataSeries {
 
         while (!wordsInStack.isEmpty()) {
 
-            System.out.print("Back iterate:  " + wordsInStack.pop() + " ");
+            System.out.print(wordsInStack.pop() + " ");
         }
     }
 
@@ -101,7 +105,7 @@ public class DataSeries {
         Iterator<Integer> numIter = numbers.iterator();
         Iterator<String> wordsIter = words.iterator();
 
-        while(numIter.hasNext() && wordsIter.hasNext()){
+        while (numIter.hasNext() && wordsIter.hasNext()) {
 
             Integer number = numIter.next();
             String word = wordsIter.next();
@@ -127,11 +131,24 @@ public class DataSeries {
         }
     }
 
-    private static void associateWordsAndNumbers(List<Integer> numbers, List<String> words){
+    private static Map<String, Integer> associateWordsAndNumbers(List<Integer> numbers, List<String> words) {
+
+        Map<String, Integer> dict = new HashMap<>();
+
+        Iterator<Integer> numIter = numbers.iterator();
+        Iterator<String> wordsIter = words.iterator();
+
+        while (numIter.hasNext() && wordsIter.hasNext()) {
+
+            Integer number = numIter.next();
+            String word = wordsIter.next();
 
 
-        
+            dict.put(word, number);
 
+
+        }
+        return dict;
     }
 
 

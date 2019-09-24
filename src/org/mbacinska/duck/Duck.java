@@ -4,20 +4,20 @@ import java.util.List;
 
 public class Duck {
 
-   private List<Leg> legs;
+   private List<AbstractLeg> legs;
 
-    public Duck(List<Leg> legs) {
+    public Duck(List<AbstractLeg> legs) {
         this.legs = legs;
     }
 
-    public void addLeg(Leg newLeg){
+    public void addLeg(AbstractLeg newLeg){
 
         legs.add(newLeg);
     }
 
     public void go(){
 
-        for(Leg leg: legs){
+        for(AbstractLeg leg: legs){
 
             leg.go();
         }

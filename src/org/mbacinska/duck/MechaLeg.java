@@ -1,11 +1,11 @@
 package org.mbacinska.duck;
 
-public class MechaLeg extends Leg {
+public class MechaLeg extends AbstractLeg {
 
     public final Double FUEL_USAGE = 80.;
     private final Fuel fuel;
 
-    public MechaLeg(String name, Fuel fuel) {
+    public MechaLeg(String name,Fuel fuel) {
         super(name);
         this.fuel = fuel;
     }

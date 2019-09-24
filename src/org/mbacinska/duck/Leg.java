@@ -1,17 +1,15 @@
 package org.mbacinska.duck;
 
-public class Leg {
-
-    protected final String name;
-
+public class Leg extends AbstractLeg {
 
 
     public Leg(String name) {
-        this.name = name;
+        super(name);
     }
 
-    void go(){
-        System.out.println("Clap Clap!! " +name);
+    @Override
+    void go() {
+        System.out.println("Clap Clap!! " + name);
     }
 
 }

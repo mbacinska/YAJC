@@ -7,19 +7,19 @@ public class SwapIntegers {
         int a = 7;
         int b = 10;
 
-//        int savedA = a;
-//        a = b;
-//        b = savedA;
-//
-//        System.out.println(a);
-//        System.out.println(b);
+        int tmp = a;
+        a = b;
+        b = tmp;
+
+        System.out.println("a: "+a);
+        System.out.println("b: "+b);
 
 
         //alternative solution; dluzsze ale bardziej czytelne
 
-        int savedA = a;
-        int savedB = b;
-        a = savedB;
-        b = savedA;
+//        int savedA = a;
+//        int savedB = b;
+//        a = savedB;
+//        b = savedA;
     }
 }

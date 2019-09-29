@@ -11,9 +11,6 @@ public class Runner {
 
             System.out.println(countObjects(makeObjects(120)));
 
-
-
-
     }
 
 
@@ -37,7 +34,7 @@ public class Runner {
             }
 
         } catch (NoAvailableObjectException exception) {
-            System.out.println("Max number of Simple object reached");
+            System.out.println("Max number of Simple objects reached");
 
         }
 

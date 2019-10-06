@@ -4,6 +4,5 @@ public enum LegKind {
 
     SIMPLE,
     SPEEDY,
-    MECHA,
-
+    MECHA
 }

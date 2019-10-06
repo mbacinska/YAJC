@@ -5,9 +5,9 @@ import java.util.List;
 
 public class DuckRunnerFactory {
 
-    public static AbstractLeg legFactory(String what, String name, Fuel fuel) {
 
-        if (what.equals("noga")) {
+    public static AbstractLeg legFactory(String what, String name, Fuel fuel) {
+        if (what.equals("leg")) {
             return new Leg(name);
         }
         if (what.equals("speed")) {
@@ -21,24 +21,21 @@ public class DuckRunnerFactory {
 
     public static void main(String[] args) {
 
-        Fuel fuel = new Fuel(100.0);
-        fuel.addFuel(100.0);
-        List<AbstractLeg> legs = new ArrayList<>();
+        Fuel fuel = new Fuel(80.0);
+        fuel.addFuel(80.0);
 
-        String kind = "noga";
-        for (int index = 0; index < 100; index++) {
+        List<AbstractLeg> legs= new ArrayList<>();
 
+        String kind = "leg";
 
-            legs.add(
-                    legFactory(kind, "from factory",fuel)
-            );
+        for (int i = 0; i < 100; i++) {
+
+            legs.add(legFactory(kind,"from factory",fuel));
 
         }
 
         Duck duck = new Duck(legs);
-        duck.addLeg(new Leg("Additional"));
-        //duck.go();
-        duck.addLeg(new MechaLeg("Mecha Leg", fuel));
+
         duck.go();
     }
 }

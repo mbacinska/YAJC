@@ -18,6 +18,7 @@ public class DuckRunner {
         duck.addLeg(new Leg("Additional"));
         //duck.go();
         duck.addLeg(new MechaLeg("Mecha Leg", fuel));
+        duck.addLeg(new SpeedLeg("Speed Leg"));
         duck.go();
 
 

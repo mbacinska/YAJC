@@ -3,9 +3,12 @@ package org.mbacinska;
 public enum HttpStatus {
 
     OK(200, "OK"),
-    UNAUTHORIZED(401, "Unauthorized"),
     CREATED(201, "Created"),
-    INTERNAL_SERVER_ERROR(500, "Internal server error");
+    UNAUTHORIZED(401, "Unauthorized"),
+    FORBIDDEN (403,"Forbidden"),
+    NOT_FOUND(404,"Not found"),
+    INTERNAL_SERVER_ERROR(500, "Internal server error"),
+    ;
 
 
     private static final String HTTP_STATUS = "Http status: ";

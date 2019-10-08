@@ -19,4 +19,24 @@ public class Model {
     public Stack<Integer> getNumbers() {
         return numbers;
     }
+
+    public void pushNumber(Integer value)
+    {
+        numbers.push(value);
+    }
+
+    public void pushOperator(Operators operator)
+    {
+        operators.push(operator);
+    }
+
+    public Integer popNumber(){
+
+        return numbers.pop();
+    }
+
+    public Operators popOperator(){
+
+        return operators.pop();
+    }
 }

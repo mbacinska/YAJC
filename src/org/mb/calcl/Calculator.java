@@ -13,11 +13,11 @@ public class Calculator {
 
     public void popOperatorsAndNumbers() {
 
-        Integer number1 = model.getNumbers().pop();
-        Integer number2 = model.getNumbers().pop();
-        Operators operator = model.getOperators().pop();
+        Integer number1 = model.popNumber();
+        Integer number2 = model.popNumber();
+        Operators operator = model.popOperator();
         Integer result = operator.doOperation(number2, number1);
-        model.getNumbers().push(result);
+        model.pushNumber(result);
 
     }
 
@@ -33,7 +33,7 @@ public class Calculator {
             System.out.println("item: " + item);
 
             if (isInteger(item)) {
-                model.getNumbers().push(Integer.parseInt(item));
+                model.pushNumber(Integer.parseInt(item));
                 continue;
             }
             Operators operator = parseOperator(item).get();

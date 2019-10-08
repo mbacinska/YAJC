@@ -1,26 +1,23 @@
 package org.mb.calcl;
 
 import java.util.Optional;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Calculator {
 
-    Stack<Operators> operators;
-    Stack<Integer> numbers;
+    Model model;
 
-    public Calculator(Stack<Operators> operators, Stack<Integer> numbers) {
-        this.operators = operators;
-        this.numbers = numbers;
+    public Calculator(Model model) {
+        this.model = model;
     }
 
     public void popOperatorsAndNumbers() {
 
-        Integer number1 = numbers.pop();
-        Integer number2 = numbers.pop();
-        Operators operator = operators.pop();
+        Integer number1 = model.getNumbers().pop();
+        Integer number2 = model.getNumbers().pop();
+        Operators operator = model.getOperators().pop();
         Integer result = operator.doOperation(number2, number1);
-        numbers.push(result);
+        model.getNumbers().push(result);
 
     }
 
@@ -31,28 +28,28 @@ public class Calculator {
 
         while (element.hasMoreElements()) {
             String item = String.valueOf(element.nextElement());
-            System.out.println("operators: " + operators);
-            System.out.println("numbers: " + numbers);
+            System.out.println("operators: " + model.getOperators());
+            System.out.println("numbers: " + model.getNumbers());
             System.out.println("item: " + item);
 
             if (isInteger(item)) {
-                numbers.push(Integer.parseInt(item));
+                model.getNumbers().push(Integer.parseInt(item));
                 continue;
             }
             Operators operator = parseOperator(item).get();
-            if (operators.empty()) {
-                operators.push(operator);
+            if (model.getOperators().empty()) {
+               model.getOperators().push(operator);
 
             } else {
-               while((!operators.empty()) && (operator.getPriority() <= operators.peek().getPriority())) {
+                while ((!model.getOperators().empty()) && (operator.getPriority() <= model.getOperators().peek().getPriority())) {
                     popOperatorsAndNumbers();
                 }
-                operators.push(operator);
+                model.getOperators().push(operator);
             }
 
         }
-        System.out.println("numbers: " + numbers);
-        return numbers.pop();
+        System.out.println("numbers: " + model.getNumbers());
+        return model.getNumbers().pop();
     }
 
     public boolean isInteger(String arg) {
@@ -62,10 +59,6 @@ public class Calculator {
         } catch (NumberFormatException e) {
             return false;
         }
-    }
-
-    public boolean isOperator(String arg) {
-        return !parseOperator(arg).isPresent();
     }
 
 

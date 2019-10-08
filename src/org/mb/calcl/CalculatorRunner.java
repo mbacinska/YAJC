@@ -6,12 +6,11 @@ public class CalculatorRunner {
 
     public static void main(String[] args) {
 
-        Stack<Operators> operators = new Stack<>();
-        Stack<Integer> numbers = new Stack<>();
-
         String data = " 4 + 11 + 2 * 3 ";
 
-        Calculator calculator = new Calculator(operators,numbers);
+        Model model = new Model();
+
+        Calculator calculator = new Calculator(model);
         System.out.println(calculator.calculate(data));
     }
 

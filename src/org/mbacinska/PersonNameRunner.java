@@ -1,5 +1,7 @@
 package org.mbacinska;
 
+import sun.management.Agent;
+
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,6 +27,19 @@ public class PersonNameRunner {
         for (PersonName element : names) {
             System.out.println(element.getFirstName() + " " + element.getSurName());
         }
+
+//        Collections.sort(names, new Comparator<PersonName>() {
+//            @Override
+//            public int compare(PersonName object1, PersonName object2) {
+//                return object1.getSurName().compareTo(object2.getSurName());
+//            }
+//        });
+//
+//        for (PersonName element : names) {
+//            System.out.println(element.getFirstName() + " " + element.getSurName());
+       //}
+
+
 
     }
 }

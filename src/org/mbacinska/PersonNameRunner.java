@@ -24,6 +24,7 @@ public class PersonNameRunner {
 
         names.sort(new PersonName.NameComparator());
 
+
         for (PersonName element : names) {
             System.out.println(element.getFirstName() + " " + element.getSurName());
         }

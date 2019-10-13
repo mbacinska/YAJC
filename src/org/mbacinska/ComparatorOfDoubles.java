@@ -47,14 +47,14 @@ public class ComparatorOfDoubles {
 
     public static void main(String[] args) {
 
-        movies.sort(Comparator.comparing(Movie::getRating));
+        movies.sort(Comparator.comparingDouble(Movie::getRating));
         ComparatorOfDoubles.printMovie();
 
 //        for (Movie element : movies) {
 //            System.out.println(element.getTitle()+" "+ element.getRating());
 //        }
 
-        movies.sort(Comparator.comparing(Movie::getRating).reversed());
+        movies.sort(Comparator.comparingDouble(Movie::getRating).reversed());
         ComparatorOfDoubles.printMovie();
 
     }

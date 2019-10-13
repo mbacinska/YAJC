@@ -60,24 +60,11 @@ public class PersonName {
 
     }
 
-
-
-    //for checking purposes
-    public static void main(String[] args) throws EmptyNameException {
-
-        PersonName person = new PersonName("magda", "bacinska");
-        System.out.println(person.getFirstName());
-        System.out.println(person.getSurName());
-
-
-        System.out.println("------------------------------------");
-        PersonName person2 = new PersonName("Marta", "Oksinska");
-        System.out.println(person2.getFirstName());
-        System.out.println(person2.getSurName());
-
-        System.out.println("------------------------------------");
-        PersonName person3 = new PersonName("", "");
-        System.out.println(person3.getFirstName());
-        System.out.println(person3.getSurName());
+    @Override
+    public String toString() {
+        return "PersonName{" +
+                "firstName='" + firstName + '\'' +
+                ", surName='" + surName + '\'' +
+                '}';
     }
 }

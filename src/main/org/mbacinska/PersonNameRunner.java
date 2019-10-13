@@ -24,9 +24,7 @@ public class PersonNameRunner {
 
         names.sort(new PersonName.NameComparator());
 
-        for (PersonName element : names) {
-            System.out.println(element.getFirstName() + " " + element.getSurName());
-        }
+        printList(names);
 
 //        Collections.sort(names, new Comparator<PersonName>() {
 //            @Override
@@ -40,5 +38,11 @@ public class PersonNameRunner {
         //}
 
 
+    }
+
+    private static void printList(List<PersonName> names) {
+        for (PersonName element : names) {
+            System.out.println(element.getFirstName() + " " + element.getSurName());
+        }
     }
 }

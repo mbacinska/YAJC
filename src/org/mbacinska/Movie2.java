@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-class Movie2 {
+public class Movie2 {
 
     private String title;
     private double rating;
@@ -29,10 +29,9 @@ class Movie2 {
     }
 }
 
-public class ComparatorOfMovies {
+class Main {
 
-
-   static List<Movie2> movies = Arrays.asList(
+    static List<Movie2> movies = Arrays.asList(
 
             new Movie2("Lord of the rings", 8.8, true),
             new Movie2("Back to the future", 8.5, false),
@@ -45,17 +44,17 @@ public class ComparatorOfMovies {
         movies.sort(new Comparator<Movie2>() {
             @Override
             public int compare(Movie2 m1, Movie2 m2) {
-                if(m1.isStarred() == m2.isStarred()){
+                if (m1.isStarred() == m2.isStarred()) {
                     return 0;
                 }
                 return m1.isStarred() ? -1 : 1;
             }
-            });
+        });
+
 
         for (Movie2 element : movies) {
-           System.out.println(element.getTitle()+" "+ element.getRating() + ", " +element.isStarred());}
+            System.out.println(element.getTitle() + " " + element.getRating() + ", " + element.isStarred());
+        }
     }
+
 }
-
-
-

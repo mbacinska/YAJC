@@ -33,9 +33,8 @@ public class PersonNameRunner {
 //            }
 //        });
 //
-//        for (PersonName element : names) {
-//            System.out.println(element.getFirstName() + " " + element.getSurName());
-        //}
+//        printList(names);
+
 
 
     }

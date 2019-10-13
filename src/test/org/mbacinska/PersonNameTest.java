@@ -19,7 +19,7 @@ public class PersonNameTest {
 
     @org.junit.Test
     public void checkIfGetterReturnsEmptyFirstName() throws EmptyNameException {
-        PersonName person = new PersonName("", "Kossak");
+        PersonName person = new PersonName(" ", "Kossak");
         Assert.assertEquals("", person.getFirstName());
     }
 
@@ -32,7 +32,7 @@ public class PersonNameTest {
 
     @org.junit.Test(expected = EmptyNameException.class)
     public void checkIfGConstructorThrowsException() throws EmptyNameException {
-        PersonName person = new PersonName("", "");
+        PersonName person = new PersonName(" ", " ");
 
     }
 
@@ -40,6 +40,12 @@ public class PersonNameTest {
     public void checkFirstNameToTitleCase() throws EmptyNameException {
         PersonName person = new PersonName("john", "Kennedy");
         Assert.assertEquals("John", person.getFirstName());
+    }
+
+    @org.junit.Test
+    public void checkSurNameToTitleCase() throws EmptyNameException {
+        PersonName person = new PersonName("John", "kennedy");
+        Assert.assertEquals("Kennedy", person.getSurName());
     }
 
     @org.junit.Test
@@ -59,6 +65,14 @@ public class PersonNameTest {
         Assert.assertEquals(person1, names.get(0));
         Assert.assertEquals(person2, names.get(2));
         Assert.assertEquals(person3, names.get(1));
+
+    }
+
+    @org.junit.Test
+    public void checkTrimFunction() throws EmptyNameException {
+        PersonName person = new PersonName(" Alek ", " ");
+        Assert.assertEquals("Alek", person.getFirstName());
+       // Assert.assertEquals("", person.getSurName());
 
     }
 }

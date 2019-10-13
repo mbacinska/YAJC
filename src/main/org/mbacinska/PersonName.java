@@ -12,9 +12,14 @@ public class PersonName {
 
     public PersonName(String firstName, String surName) throws EmptyNameException {
 
-        if (!firstName.equals("") || !surName.equals("")) {
-            this.firstName = toTitleCase(firstName.trim());
-            this.surName = toTitleCase(surName.trim());
+        String firstNamedTrimmed = firstName.trim();
+        String surNameTrimmed = surName.trim();
+
+        if (!firstNamedTrimmed.equals("") || !surNameTrimmed.equals("")) {
+
+            this.firstName = toTitleCase(firstNamedTrimmed);
+
+            this.surName = toTitleCase(surNameTrimmed);
         } else {
             throw new EmptyNameException("Empty names exception");
         }

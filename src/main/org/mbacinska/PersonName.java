@@ -28,7 +28,7 @@ public class PersonName {
         return surName;
     }
 
-//sciągnięte ze stacka z poprawioną literówką:-)
+//sciągnięte ze stacka z poprawioną literówką
 
     public static String toTitleCase(String input) {
         StringBuilder titleCase = new StringBuilder(input.length());
@@ -60,6 +60,9 @@ public class PersonName {
 
     }
 
+
+
+    //for checking purposes
     public static void main(String[] args) throws EmptyNameException {
 
         PersonName person = new PersonName("magda", "bacinska");

@@ -13,7 +13,7 @@ public class PersonNameTest {
 
     @org.junit.Test
     public void checkIfGetterReturnsProperFirstName() throws EmptyNameException {
-        PersonName person = new PersonName("john", "");
+        PersonName person = new PersonName("John", "");
         Assert.assertEquals("John", person.getFirstName());
     }
 
@@ -25,7 +25,7 @@ public class PersonNameTest {
 
     @org.junit.Test
     public void checkIfGetterReturnsProperSurName() throws EmptyNameException {
-        PersonName person = new PersonName("john", "Kennedy");
+        PersonName person = new PersonName("John", "Kennedy");
         Assert.assertEquals("Kennedy", person.getSurName());
 
     }

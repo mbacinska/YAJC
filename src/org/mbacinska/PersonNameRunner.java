@@ -11,7 +11,12 @@ public class PersonNameRunner {
 
         );
         System.out.println(names);
-        names.sort(new PersonName.SurNameComparator());
+        sortData(names);
         System.out.println(names);
+    }
+
+    private static void sortData(List<PersonName> names) {
+
+        names.sort(new PersonName.SurNameComparator());
     }
 }

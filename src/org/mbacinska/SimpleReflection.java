@@ -28,8 +28,8 @@ public class SimpleReflection {
 
         System.out.println(cls.getName());
 
-        //getting constructor
-        Constructor constructor = object.getClass().getConstructor();
+       // getting constructor
+        Constructor constructor = object.getClass().getConstructor(int.class);
 
         System.out.println(constructor.getName());
 

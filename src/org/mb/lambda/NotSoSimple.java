@@ -15,7 +15,7 @@ public class NotSoSimple {
 //        };
         Runnable r = () -> System.out.println("go");
 
-        Supplier<Object> someObject = Object::new;//anonimowy akcesor do metory new w klasie Object
+        Supplier<Object> someObject = Object::new;//anonimowy akcesor do metody new w klasie Object
         someObject.get();
         //new Object(); zastepuje dwie powyzsze linijki
 

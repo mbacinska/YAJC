@@ -1,60 +1,79 @@
 package org.mbacinska;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Movie2 {
 
     private String title;
+    private int year;
     private double rating;
-    private boolean starred;
 
-    public Movie2(String title, double rating, boolean starred) {
+    public Movie2(String title, int year, double rating) {
         this.title = title;
+        this.year = year;
         this.rating = rating;
-        this.starred = starred;
     }
 
-    public boolean isStarred() {
-        return starred;
-    }
 
     public String getTitle() {
         return title;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     public double getRating() {
         return rating;
     }
-}
 
-class Main {
+  static class RatingCompare implements Comparator<Movie2> {
 
-    static List<Movie2> movies = Arrays.asList(
-
-            new Movie2("Lord of the rings", 8.8, true),
-            new Movie2("Back to the future", 8.5, false),
-            new Movie2("Carlito's way", 7.9, true),
-            new Movie2("Pulp fiction", 8.9, false));
-
-
-    public static void main(String[] args) {
-
-        movies.sort(new Comparator<Movie2>() {
-            @Override
-            public int compare(Movie2 m1, Movie2 m2) {
-                if (m1.isStarred() == m2.isStarred()) {
-                    return 0;
-                }
-                return m1.isStarred() ? -1 : 1;
+        @Override
+        public int compare(Movie2 m1, Movie2 m2) {
+            if (m1.rating > m2.rating) {
+                return 1;
+            } else if (m1.rating < m2.rating) {
+                return -1;
+            } else {
+                return 0;
             }
-        });
-
-
-        for (Movie2 element : movies) {
-            System.out.println(element.getTitle() + " " + element.getRating() + ", " + element.isStarred());
         }
     }
 
-}
+    static class TitleCompare implements Comparator<Movie2>{
+
+        @Override
+        public int compare(Movie2 m1, Movie2 m2) {
+            return m1.title.compareTo(m2.title);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        List<Movie2> movies = new ArrayList<>();
+        movies.add(new Movie2("Force Awakens", 2015, 8.3));
+        movies.add(new Movie2("Star Wars", 1977, 8.7));
+        movies.add(new Movie2("Empire Strikes Back", 1980, 8.8));
+        movies.add(new Movie2("Return of the Jedi", 1983, 8.4));
+
+        System.out.println("Sorted by rating");
+        Collections.sort(movies,new RatingCompare());
+
+        for (Movie2 movie: movies)
+            System.out.println(movie.rating+ " " + movie.title + " " + movie.year);
+
+
+        System.out.println("Sorted by title");
+
+        Collections.sort(movies, new TitleCompare());
+
+        for (Movie2 movie: movies)
+            System.out.println(movie.rating+ " " + movie.title + " " + movie.year);
+
+    }
+
+
+    }
+
+

@@ -7,7 +7,7 @@ public class ComparatorOfStrings {
 
     static List<String> cities = Arrays.asList(
             "Milan",
-            "london",
+            "London",
             "San Francisco",
             "Tokyo",
             "New Delhi"

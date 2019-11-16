@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class CompactNull {
 
-    final Integer WRONG_AGE = null;
+    final Integer WRONG_AGE = null; //null means a reference to nowhere, a space in memory that does not contain an object.
 
     public Integer getAge() {
         return null;
@@ -16,7 +16,7 @@ public class CompactNull {
         if (age == null) {
             return false;
         }
-        if (age != null && age >= 0) {
+        if (age != null && age.intValue() >= 0) {
             return true;
         }
 

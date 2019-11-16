@@ -1,4 +1,4 @@
-package FactoryPatterns;
+package FactoryPattern;
 
 public interface Shape {
 

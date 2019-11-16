@@ -44,4 +44,24 @@ public class CircleRunner {
         factory.setPrototype(circle);
         System.out.println(factory.getAnotherCircle());
     }
+
+    @Test
+    public void testClone() throws CloneNotSupportedException {
+
+        Circle circle = new Circle(1, 2, 3);
+        System.out.println(circle);
+        System.out.println(circle.radius.radius);
+
+        Circle clone = (Circle) circle.clone();
+
+        circle.x = 5;
+        circle.radius.radius = 5;
+
+        System.out.println(circle);
+        System.out.println(circle.radius.radius);
+
+
+        System.out.println(clone);
+        System.out.println(clone.radius.radius);
+    }
 }

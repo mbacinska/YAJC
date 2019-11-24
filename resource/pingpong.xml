@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FSM>
+    <STATE id="START" type="ID">
+        <MESSAGE id="doPing" action="doPing" nextState="PING"/>
+        <MESSAGE id="doPong" action="doPong" nextState="PONG"/>
+    </STATE>
+    <STATE id="PING">
+        <MESSAGE id="doPing" action="doPing" nextState="ERROR"/>
+        <MESSAGE id="doPong" action="doPong" nextState="PONG"/>
+    </STATE>
+    <STATE id="PONG">
+        <MESSAGE id="doPing" action="doPing" nextState="PING"/>
+        <MESSAGE id="doPong" action="doPong" nextState="ERROR"/>
+    </STATE>
+    <STATE id="ERROR">
+        <MESSAGE id="restart" action="restart" nextState="START"/>
+    </STATE>
+
+
+</FSM>

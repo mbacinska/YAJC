@@ -1,5 +1,6 @@
 package org.mbacinska.lesson13;
 
+
 import org.junit.Test;
 
 public class Stringsy {
@@ -9,6 +10,10 @@ public class Stringsy {
 
         String data = "ala";
 
-
+        System.out.println(data);
     }
+
+
+   
+
 }
